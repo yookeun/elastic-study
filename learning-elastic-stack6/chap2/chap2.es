@@ -181,3 +181,26 @@ PUT /custom_analyzer_index
     }
 }
 
+POST /custom_analyzer_index/my_type
+{
+    "product":"Learning Elastic Stack 6"
+}
+
+
+POST /custom_analyzer_index/my_type
+{
+    "product":"Mastering Elasticsearch"
+}
+
+
+GET /custom_analyzer_index/_search
+{
+    "query":{
+        "match":{
+            "product": true
+        }
+    }
+}
+
+
+

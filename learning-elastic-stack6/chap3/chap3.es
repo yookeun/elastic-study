@@ -163,9 +163,27 @@ GET /amazon_products/products/_search
         "multi_match":{
             "query":"monitor aquarium",
             "fields":[
-                "title",
+                "title^3",
                 "description"
             ]
         }
     }
 }
+
+
+
+POST /_analyze
+{
+    "tokenizer":"standard",
+    "text": "MBC/MBC다시보는명작가/무한도전Classic(구작)"
+}
+
+
+
+
+POST /_analyze
+{
+    "tokenizer":"standard",
+    "text": "SBS/최신예능/동상이몽2-너는내운명"
+}
+
